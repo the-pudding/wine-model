@@ -1,0 +1,81 @@
+<h1>The shape of the model</h1>
+
+<div class="section no-trigger">
+  <p>
+    Now that we know there are some associations between the physiochemical properties (inputs) and the wine quality (output), let’s see if we can build a model that fits a curve best representing the relationship between the two.
+  </p>
+  <p>
+    For simplicity’s sake let's say, we want to build a model with a single predictor: <span class="highlight">Alcohol</span>. 
+  <p>
+  </p>
+    One of the simpler options is to build a so-called <a href="https://setosa.io/ev/ordinary-least-squares-regression/" target="_blank" rel="noreferrer">Ordinary Least Squares Regression</a> model that predicts wine quality solely on Alcohol, which might look something like this:
+  </p>
+</div>
+
+<div class="section section-56">
+  <p>
+    The model in this case very much <span class="highlight">is</span> the line. Reality &mdash; the actual distribution of our wines in the scatter plot &mdash; is of course more complex as we can see. Our model is rather a reduced approximation of reality &mdash; it captures the association's essence &mdash; and it fits into a simple equation:
+  </p>
+  <p class="center">
+    <i><span class="highlight">y = m &middot; x + b</span></i>
+  </p>
+  <p class="tight-bottom">
+    <span class="highlight">y</span> represents the quality output value 
+  </p>
+  <p class="tight-top tight-bottom">
+    <span class="highlight">x</span> the alcohol input value. 
+  </p>
+  <p class="tight-top tight-bottom">
+    <span class="highlight">b</span> represents the intercept (the point the line crosses the y axis when <span class="highlight">x = 0</span>) and
+  </p>
+  <p class="tight-top tight-bottom">
+    <span class="highlight">m</span> the slope of the line or in our case, how much our quality goes up if we add one percent of alcohol.
+  </p>
+  </p>
+    We can now use this equation to predict Quality solely on Alcohol.
+  </p>
+</div>
+
+<div class="section section-57">
+  <p>
+    Plugging in an Alcohol value of <span class="highlight">x = 12%</span>, for example, will return a Quality (a <span class="highlight">y</span> value) just above 6. 
+  </p>
+  <p>
+    That's nice! We can do this for any value, however, we’ll soon hit a problem that might bend reality just a little too much…
+  </p>
+</div>
+
+<div class="section section-58">
+  <p>
+    Because the line theoretically extends indefinitely into any direction, it can lead to rather nonsensical results, like, for example, quality values above 10 or even negative quality ratings.
+  </p>
+  <p>
+    Instead, we’d like a model equation that doesn’t produce a straight line.
+  </p>
+</div>
+
+<div class="section section-59">
+  <p>
+    To get there, we first make things worse, by simplifying our continuous data to a binary variable: 0 for <span class="bad">low</span>, 1 for <span class="good">high quality</span>. This indeed exacerbates our line problems. 
+  </p>
+  <p>
+    To win, we need a different model function. One that doesn’t produce a line but something like this...
+  </p>
+</div>
+
+<div class="section section-60">
+  <p>
+    This is a typical curve for a <a href="https://en.wikipedia.org/wiki/Logistic_regression" target="_blank" rel="noreferrer">Logistic Regression</a> model.
+  </p>
+
+  <p>
+    We can now express the relationship between alcohol and quality in probabilities from 0 to 100%. For example, if a wine has an alcohol level of 12 it has an 86% probability of being good. 
+  </p>
+  <p>
+    This helps us express the likelihood of a wine being a certain quality: 20% good is obviously not quite as certain as 100% good.
+  </p>
+  <p>
+    It’s like with a badly drawn sloth. We might not be totally sure about it being a sloth, but we might consider it likely.
+  </p>
+</div>
+

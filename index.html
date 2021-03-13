@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Wine & Math</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      sizes="32x32"
+      href="/favicon-pudding.ico"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Signika:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dist/bundle.css" />
+  </head>
+  <body>
+    <div id="svg-container">
+      <svg id="svg-hidden"></svg>
+    </div>
+    <div id="container">
+      <div id="container-intro"></div>
+      <div id="container-inner">
+        <div class="wrapper" id="visual-container">
+          <div id="canvas-main-container">
+            <canvas id="canvas-level-0"></canvas>
+            <canvas id="canvas-level-1" class="absolute"></canvas>
+            <canvas id="canvas-level-2" class="absolute"></canvas>
+            <canvas id="canvas-level-3" class="absolute"></canvas>
+            <canvas id="canvas-level-4" class="absolute"></canvas>
+            <canvas id="canvas-level-5" class="absolute"></canvas>
+            <canvas id="canvas-level-6" class="absolute"></canvas>
+          </div>
+        </div>
+        <div class="wrapper" id="text-container"></div>
+      </div>
+      <footer></footer>
+    </div>
+
+    <div id="loading">
+      <img src="../../static/wine-loading.gif" alt="filling bottle" />
+    </div>
+
+    <script src="src/app/check.js"></script>
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+body {
+  margin: 0;
+  // set overflow to hidden everywhere
+  // apart from the scrolly container
+  overflow: hidden;
+  font-family: Signika;
+  font-weight: 100;
+  color: $colour-font;
+}
+
+// Buttons
+button {
+  margin: 1em;
+  font-size: 0.7em;
+  color: $colour-font;
+}
+
+#loading {
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    circle 65vw at 0% 0%,
+    $colour-bg-01,
+    $colour-bg-02
+  );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  z-index: 30;
+  pointer-events: none;
+
+  img {
+    height: 70px;
+    opacity: 0.75;
+  }
+}
+
+// The wrapping set up.
+#container {
+  // Full width and height
+  width: 100vw;
+  height: 100vh;
+
+  // One position
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  // Scroll
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: radial-gradient(
+    circle 65vw at 0% 0%,
+    $colour-bg-01,
+    $colour-bg-02
+  );
+}
+
+#container-inner {
+  // Full width but as long as content, so height: auto
+  // (or just no height) (this is the scrolling div)
+  width: 100vw;
+
+  // ☝️ Flex - col in mobile/row in desktop
+  display: flex;
+  flex-direction: column;
+
+  // for the children width (not strictlye necessary as they are in vw)
+  position: relative;
+
+  border-bottom: 3px solid transparent;
+  border-image: url('../static/border-horiz.png') 30 stretch;
+
+  @media #{$tablet-up} {
+    flex-direction: row;
+  }
+}
+
+#visual-container {
+  // sticky
+  position: sticky;
+  top: 0;
+  // need align-self for some flex-stretch reason. https://stackoverflow.com/a/44446672/3219033
+  align-self: flex-start;
+
+  // ☝️ Need to fill the height in desktop
+  height: 55vh;
+
+  // ☝️ Regulate the width (needs pendant in #text-container)
+  width: 100vw;
+
+  // To make the text invisible, this needs to be above the later
+  // text div with an opaque background.
+  z-index: 20;
+
+  background: radial-gradient(
+    circle 65vw at 0% 0%,
+    $colour-bg-01,
+    $colour-bg-02
+  );
+
+  // Border
+  border-bottom: 2px solid transparent;
+  border-right: none;
+  border-image: url('../static/border-horiz.png') 30 stretch;
+
+  @media #{$tablet-up} {
+    // ☝️ Need to fill the height in desktop
+    height: 100vh;
+
+    // ☝️ Regulate the width (needs pendant in #text-container)
+    width: 60vw;
+
+    // Border
+    border-bottom: none;
+    border-right: 2px solid transparent;
+    border-image: url('../static/border-vert.png') 30 stretch;
+  }
+}
+
+#text-container {
+  // ☝️ Regulate the width (needs pendant in #visual-wrap)
+  width: 100vw;
+
+  @media #{$tablet-up} {
+    // ☝️ Regulate the width (needs pendant in #visual-wrap)
+    width: 40vw;
+    z-index: 10;
+  }
+}
+
+.wrapper {
+  position: relative;
+}
+
+#brand {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  // z-index: 30; // If it's to the right, as it needs to be above the visual container.
+
+  p {
+    text-align: center;
+    margin: 0 0 0.25em;
+    font-size: 0.8em;
+    color: rgba(41, 14, 56, 0.5);
+  }
+
+  a {
+    box-shadow: inset 0 -0.2em 20px 0 #eae2e8;
+  }
+
+  a:hover {
+    box-shadow: inset 0 -0.6em 6px 0 #d2c1cd;
+  }
+
+  #logo {
+    margin: 0 auto;
+    width: 70px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    path {
+      fill: rgba(41, 14, 56, 0.5);
+    }
+  }
+}
+
+#ie-note {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+  width: 50%;
+  margin: 3rem auto;
+
+  background: #f3efe5;
+  padding: 2rem 4rem;
+  border-radius: 6px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid $colour-bad;
+}

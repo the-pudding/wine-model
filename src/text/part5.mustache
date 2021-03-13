@@ -1,0 +1,128 @@
+<h1>The shape of the data</h1>
+
+<div class="section section-44">
+  <p>
+    Here are 1,600 tiny bottles (disguised as dots) unfolding into a well-behaved grid.
+  </p>
+  <p>
+    Let's give them some shape...
+  </p>
+</div>
+
+<div class="section section-45">
+  <p>
+    Here’s <span class="highlight">Alcohol</span>. Most wines are between 9 and 12% with quite a few bottles around the 9.5% mark. This is low for reds, which tend to be <a href="https://winefolly.com/tips/alcohol-content-in-wine/" target="_blank" rel="noreferrer">between 12 and 15%</a>.
+  </p>
+  <p>
+    We can look at other characteristics like...
+  </p>
+</div>
+
+<div class="section section-46">
+  <p>
+    <span class="highlight">Density</span>,
+  </p>
+</div>
+
+<div class="section section-47">
+  <p>
+    <span class="highlight">Fixed Acids</span>,
+  </p>
+</div>
+
+<div class="section section-48">
+  <p>
+    <span class="highlight">pH</span> and more.
+  </p>
+</div>
+
+<div class="section section-49">
+  <p>
+    But one key variable in our data is of course:
+  </p>
+</div>
+
+<div class="section section-50">
+  <p>
+    <span class="highlight">Quality</span>
+  </p>
+</div>
+
+<div class="section no-trigger">
+  <p>
+    Here’s how the Commisssion's wine assessors marked all wines on a scale from 0 to 10. 
+  </p>
+  <p>
+    no wine got worse than 3 or better than 8 and most wines clustered around the 5 or 6 mark with an average of 5.6.
+  </p>
+</div>
+
+
+<div class="section no-trigger">
+  <p>
+    These individual distributions are key to getting a base understanding of our data, but ultimately, we want to know how the physiochemical properties relate to each other and specifically how they relate to quality. 
+  </p>
+  <p>
+    In order to make this more visible, let’s split all our wines into two groups: 
+  </p>
+</div>
+
+<div class="section section-51">
+  <p>
+    wines of <span class="bad">lower quality</span> (anything rated below 7) and wines of <span class="good">high quality</span> (wines rated 7 and above).
+  </p>
+  <p>
+    Note, how the majority of medium quality wines mingle in the centre. As such, <span class="good">"high-quality"</span> for this dataset really does mean good from the assessors perspective, while <span class="bad">"low-quality"</span> includes truly low-quality wines as well as average wines resulting in a proportionally larger class.
+  </p>
+  <p>
+    Models don't particularly like this imbalance and we would typically counter this with <a href="https://ieeexplore.ieee.org/document/7475021" target="_blank" rel="noreferrer">helpful techniques</a>; but we'll keep it simple here.
+  </p>
+</div>
+
+<div class="section no-trigger">
+  <p>
+    We can now check how our variables distribute across these two simple categories. 
+  </p>
+  <p>
+    First, let’s look at <span class="highlight">Volatile Acidity</span>...
+  </p>
+</div>
+
+<div class="section section-52">
+  <p>
+    The <span class="good">blue, better wines</span> predominantly sport lower levels and &mdash; reversely &mdash; the <span class="bad">worse wines</span> have the highest levels of volatile acidity, potentially impacting taste in a negative way.
+  </p>
+  <p>
+    We can look at the same data in a scatter plot,
+  </p>
+</div>
+
+<div class="section section-53">
+  <p>
+    which maybe more clearly suggests that the lower the volatile acidity → the higher the quality in this very dataset.
+  </p>
+</div>
+
+<div class="section section-54">
+  <p>
+    Let's also look at <span class="highlight">Alcohol</span>.
+  </p>
+</div>
+
+<div class="section no-trigger">
+  <p>
+    The association is flipped here &mdash; higher quality wines are likely to have more alcohol in this data, as a solid proportion of especially wines around the 12-13% mark was voted good. 
+  </p>
+  <p>
+    <span class="arrow"></span>Look at that 9.5% bar. Considering this is the most populated section, it’s interesting to see how few wines are deemed <span class="good">high quality</span> in here.
+  </p>
+</div>
+
+<div class="section section-55">
+  <p>
+    The scatter plot also shows the general trend. The higher the alcohol → the better the wine
+  </p>
+  <sub>
+    <a href="https://pruned-correlations.netlify.app" target="_blank" rel="noreferrer">Here's a whole separate piece</a> about all correlations in this dataset...
+  </sub>
+</div>

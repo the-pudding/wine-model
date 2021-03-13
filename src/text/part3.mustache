@@ -1,0 +1,158 @@
+<h1>Learning by example</h1>
+
+<div class="section section-12">
+  <p>
+  In order to teach a predictive model to identify a good wine from a less good wine, we have to take our model by the hand and teach it. The model doesn't have our senses &mdash; it can't see, taste, or feel a wine, and we can’t be there for it in the future, to pre-taste each wine.
+  </p>
+  <p>
+    We all know this process of <a href="https://www.analyticsvidhya.com/blog/2020/04/supervised-learning-unsupervised-learning/" target="_blank" rel="noreferrer">supervised learning</a> from our own childhood.
+  </p>
+</div>
+
+<div class="section section-13">
+  <p>
+    Think back to the days when you learned your animal names. 
+  </p>
+  <p>
+    You were probably just sitting in a proudly self-concocted puddle of peas, mash and apple juice leafing through a picture book of animal drawings, while your parents tried to teach you what a sloth looks like.
+  </p>
+</div>
+
+<div class="section section-14">
+  <p>
+    Any of these shapes could have been a sloth,
+  </p>
+</div>
+
+<div class="section section-15">
+  <p>
+    but your parents calmly supervised your learning,
+  </p>
+</div>
+
+<div class="section section-16">
+  <p>
+    by labelling the non-sloths
+  </p>
+</div>
+
+<div class="section section-17">
+  <p>
+    and celebrating the actual sloths!
+  </p>
+</div>
+
+<div class="section section-18">
+  <p>
+    And even though not every sloth looks the same,
+  </p>
+</div>
+
+<div class="section section-19">
+  <p>
+    after many examples, you learned the basic features that make up a sloth. 
+  </p>
+</div>
+
+<div class="section section-20">
+  <p>
+    Now, although you sometimes weren't sure whether that thing you looked at was a sloth indeed &mdash; possibly because the picture book was a bit rubbish &mdash; you learned to give it a good guess at least. 
+  </p>
+  <p>
+    Soooo...
+  </p>
+</div>
+
+<div class="section no-trigger">
+  <p>
+    <span class="highlight large">
+      what's your guess with this specimen over there <span class="arrow"></span>?
+    </span>
+  </p>
+  <div id="sloth-wrap">
+    <button class="sloth-button" data-answer="true">Totally a sloth!</button>
+    <button class="sloth-button" data-answer="false">No idea</button>
+    <button class="sloth-button" data-answer="false">Anything but</button>
+  </div>
+  <p>
+    <span class="sloth-answer" id="sloth-reveal">It is a sloth!</span> 
+    <span class="sloth-answer" id="sloth-reveal-delay">(possibly)</span>
+  </p>
+</div>
+
+<div class="section no-trigger">
+  <p>
+    What you probably did here is, you scanned the configuration of lines and shapes that made up the animal and gauged how likely it is for this thing to be a sloth.
+  </p>
+  <p>
+    That's exactly what a mathematical model does, too: 
+    <ol>
+      <li>you give it <span class="highlight">examples</span> (many at best) </li>
+      <li>you <span class="highlight">label</span> them with what you want your model to learn </li>
+      <li>and let it detect <span class="highlight">patterns</span>...</li>
+      <li>that help your concluding  <span class="highlight">classification</span>.</li>
+    </ol>
+  </p>
+
+</div>
+
+<div class="section section-21">
+  <p>
+    So &mdash; moving back to our wine example...
+  </p>
+</div>
+
+<div class="section section-22">
+  <p>
+    we're interested in classifying wines into
+  </p>
+</div>
+
+<div class="section section-23">
+  <p>
+    <span class="good">...high-quality</span
+  </p>
+</div>
+
+<div class="section section-24">
+  <p>
+    ...and <span class="bad">low-quality</span> wines.
+  </p>
+  <p>
+    But whatever we do, a single bottle won’t be enough.
+  </p>
+</div>
+
+<div class="section section-25">
+  <p>
+    Just like a single animal drawing won't teach a child what a sloth is, a model needs as many wines as we can get hold of.
+  <p>
+  </p>
+    Let's get some...
+  </p>
+</div>
+
+<div class="section section-26">
+    {{! empty }}
+</div>
+
+<div class="section section-27">
+  <p>
+    Each wine in this dataset is labelled as either a <span class="good">high</span> or a <span class="bad">low-quality</span> wine. This is the dataset we train the model with, our <a href="https://developers.google.com/machine-learning/crash-course/training-and-test-sets/splitting-data" target="_blank" rel="noreferrer">training set</a>. 
+  </p>
+  <p>
+    Training sets are all-knowing. They have all the model inputs as well as  the model output variable &mdash; the quality ranking in our case &mdash;  so they can train the model. 
+  </p>
+  <p>
+    After the model is trained it shouldn’t need these labels and we can test how accurate it predicts each case with another dataset &mdash; a <a href="https://developers.google.com/machine-learning/crash-course/training-and-test-sets/splitting-data" target="_blank" rel="noreferrer">test set</a> &mdash; consisting only of wines with inputs and no outputs.
+  </p>
+</div>
+
+<div class="section section-28">
+  <p>
+    To calculate the model, the algorithm first splits the dataset into <span class="good">high</span> and <span class="bad">low quality</span> wines before identifying how the characteristics of each group correlate with the output variable. For example, higher quality wines might have a higher alcohol level than lower quality wines. 
+  </p>
+  <p>
+    Lastly it would formulate these results in a weighted model equation.
+  </p>
+</div>

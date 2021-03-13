@@ -1,0 +1,257 @@
+// The text
+
+// Main section.
+.main-section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  h1 {
+    position: sticky;
+    top: 0;
+
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+    padding-left: 1rem;
+    margin-top: 30vh;
+    margin-right: 1.5vh;
+
+    font-family: 'Amatic SC';
+    font-weight: bold;
+    font-size: 2em;
+    color: $colour-font-header;
+    text-align: end;
+
+    opacity: 0.5;
+    background: none;
+    box-shadow: none;
+    opacity: 0.95;
+
+    z-index: 30;
+
+    &.tight-top {
+      margin-top: 15vh;
+    }
+    @media #{$phone-up} {
+      padding-top: 2vh;
+    }
+
+    @media #{$tablet-up} {
+      font-size: 2.5em;
+      opacity: 1;
+      background: $colour-bg-02;
+      text-align: start;
+
+      box-shadow: 0px 2px 0px $colour-font-header; // border doesn't show sometimes 🤷‍♂️
+    }
+  }
+
+  h1 + .section {
+    padding-top: 1rem;
+  }
+
+  .section {
+    padding-top: 40vh;
+    padding-bottom: 40vh;
+    font-size: 1em;
+    width: 70%;
+    margin: auto;
+
+    @media #{$tablet-up} {
+      font-size: 1.2em;
+    }
+
+    ul {
+      list-style-type: decimal;
+    }
+  }
+
+  .section.empty {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .section:last-child {
+    padding-bottom: 2rem;
+  }
+
+  .section.tight-top {
+    padding-top: 1rem;
+  }
+
+  .section.tight-bottom {
+    padding-bottom: 5rem;
+  }
+
+  .image-wrap {
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+
+      @media #{$phone-up} {
+        max-width: 80%;
+      }
+      @media #{$tablet-up} {
+        max-width: 100%;
+      }
+      @media #{$laptop-s-up} {
+        max-width: 80%;
+      }
+      @media #{$laptop-m-up} {
+        max-width: 70%;
+      }
+      @media #{$desktop-up} {
+        max-width: 60%;
+      }
+    }
+  }
+}
+
+// Sloth button.
+#sloth-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @media #{$phone-up} {
+    flex-direction: column;
+  }
+}
+
+span.sloth-answer {
+  display: inline-block;
+}
+
+span#sloth-reveal {
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 250ms;
+}
+
+span#sloth-reveal-delay {
+  font-size: 0.7em;
+  opacity: 0;
+  transition: opacity 250ms 1s;
+}
+
+span#sloth-reveal.show,
+span#sloth-reveal-delay.show {
+  opacity: 1;
+  animation: pulse 750ms ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button.sloth-button {
+  max-width: 250px;
+  padding: 1rem 1rem;
+  margin: 0.25rem 0.7rem;
+  background: rgba(247, 245, 222, 0);
+  outline: none;
+  border: solid 2px #41403e;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  @media #{$phone-up} {
+    margin: 0.25rem 1rem;
+  }
+
+  &:hover {
+    box-shadow: 2px 8px 4px -5px rgba(0, 0, 0, 0.3);
+    background: rgb(255, 255, 234);
+  }
+
+  &.clicked-true {
+    background: #c4d0ff;
+    font-weight: bold;
+  }
+  &.clicked-false {
+    background: #ce6a8c;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+// Links
+a {
+  position: relative;
+  color: $colour-link-font;
+  box-shadow: inset 0 -0.5em 5px 0 $colour-link-bg-dark;
+  transition: all 0.3s;
+}
+
+a.subtle {
+  box-shadow: inset 0 -0.2em 5px 0 $colour-link-bg-dark;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+a.subtle:hover {
+  color: $colour-link-hover;
+  font-weight: 700;
+  box-shadow: inset 0 -0.2em 5px 0 $colour-link-bg;
+}
+
+a:hover {
+  color: $colour-link-hover;
+  font-weight: 300;
+  box-shadow: inset 0 -0.2em 20px 0 $colour-link-bg;
+}
+
+// Specific.
+span.highlight {
+  font-weight: 500;
+}
+
+span.larger {
+  font-size: larger;
+}
+
+span.good {
+  color: $colour-good;
+  font-weight: 500;
+}
+
+span.bad {
+  color: $colour-bad;
+  font-weight: 500;
+}
+
+.center {
+  text-align: center;
+}
+
+p.tight-top {
+  margin-top: 0.25em;
+}
+
+p.tight-bottom {
+  margin-bottom: 0.25em;
+}
+
+span.arrow::after {
+  content: '↑';
+  @media #{$tablet-up} {
+    content: '←';
+  }
+}

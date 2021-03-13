@@ -1,0 +1,17 @@
+// Canvas
+#canvas-main-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+canvas.absolute,
+svg.absolute, {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#wine-scape {
+  stroke-miterlimit: 1;
+}

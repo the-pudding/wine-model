@@ -1,0 +1,205 @@
+#container-intro {
+  min-height: 100vh;
+  margin: auto;
+  margin-bottom: 20vh;
+  position: relative;
+}
+
+#pudding-logo {
+  max-width: 9rem;
+  margin: 1rem auto 2rem;
+
+  a {
+    box-shadow: 0 0;
+  }
+}
+
+#title-image {
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0px 0px 0px #ccc;
+
+  img {
+    max-width: 90%;
+    display: block;
+    margin: auto;
+
+    @media #{$tablet-up} {
+      width: 60%;
+    }
+
+    @media #{$laptop-s-up} {
+      width: 50%;
+    }
+
+    @media #{$laptop-m-up} {
+      width: 40%;
+    }
+
+    @media #{$desktop-up} {
+      width: 30%;
+    }
+  }
+}
+
+// Title
+#title-text {
+  margin: 0 0 3rem;
+  font-family: 'Amatic SC';
+
+  // Wave.
+  #title-header h2 {
+    font-size: 5rem;
+    margin: 0;
+
+    @media #{$tablet-up} {
+      font-size: 8rem;
+    }
+
+    // The two headers (stroke and wave) overlap each other and
+    // get centered as abs. elements without knowing their width.
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    white-space: nowrap; // otherwise text will break.
+  }
+
+  #title-header h2:nth-child(1) {
+    // First header is just a stroke with a text-shadow.
+    color: transparent;
+    text-shadow: 0px 0px 3px #d4cdd2;
+  }
+
+  #title-header h2:nth-child(2) {
+    // The second header is a clip path animation
+    // with the transparent text as the clipping path.
+    background: linear-gradient(to right, #532c69, #111);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: wave 10s ease-in-out infinite;
+  }
+
+  // color: transparent doesn't work in firefox.
+  // This is how to set it to its default value instead.
+  @-moz-document url-prefix() {
+    #title-header h2:nth-child(2) {
+      color: currentColor;
+    }
+  }
+
+  #title-header h2:nth-child(3) {
+    // The third element just ellbows free the space.
+    position: relative;
+    visibility: hidden;
+    z-index: -1;
+  }
+
+  h3,
+  h4 {
+    text-align: center;
+    font-family: 'Amatic SC';
+    font-size: 2.2rem;
+    margin: 0px;
+    color: #2a1835;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+  }
+}
+
+#intro-text {
+  width: 90%;
+  margin: auto;
+
+  @media #{$tablet-up} {
+    width: 50%;
+  }
+
+  @media #{$laptop-m-up} {
+    width: 30%;
+  }
+
+  p {
+    width: 80%;
+    margin: 1em auto;
+    font-size: 1.2em;
+  }
+}
+
+.scroll-arrow {
+  font-family: 'Amatic SC';
+  margin: 3rem auto 0;
+  text-align: center;
+  animation: scroll 5s ease-in-out infinite;
+}
+
+.lowlight {
+  display: inline-block;
+  animation: blink 5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    clip-path: polygon(
+      0% 57%,
+      11% 52%,
+      22% 47%,
+      31% 46%,
+      43% 47%,
+      50% 51%,
+      59% 57%,
+      68% 62%,
+      78% 62%,
+      89% 58%,
+      97% 52%,
+      100% 47%,
+      100% 100%,
+      0% 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0 28%,
+      9% 35%,
+      18% 41%,
+      28% 41%,
+      38% 38%,
+      45% 30%,
+      57% 26%,
+      68% 28%,
+      75% 33%,
+      84% 38%,
+      91% 42%,
+      100% 43%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+@keyframes scroll {
+  0%,
+  100% {
+    transform: translateY(1rem);
+  }
+  50% {
+    transform: translateY(-1rem);
+  }
+}

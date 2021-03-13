@@ -1,0 +1,93 @@
+footer {
+  padding: 1rem;
+  margin-top: 1rem;
+
+  background: linear-gradient($colour-bg-02, $colour-bg-03);
+}
+
+footer #stories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+footer .story {
+  width: 10rem;
+  position: relative;
+  margin: 1rem;
+
+  @media #{$phone-up} {
+    width: 14rem;
+  }
+
+  img {
+    width: 100%;
+    box-shadow: 0 0;
+    transition: all 0.3s;
+
+    &:hover {
+      box-shadow: 2px 2px $colour-link-font;
+    }
+  }
+
+  p {
+    margin: 0.3rem 0;
+    font-weight: bold;
+    color: $colour-link-font;
+  }
+}
+
+footer .footer-company__about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 9rem;
+  }
+
+  p {
+    max-width: 80%;
+    text-align: center;
+  }
+}
+
+footer .footer-company__cta-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
+
+  @media #{$laptop-m-up} {
+    width: 60%;
+  }
+
+  @media #{$desktop-up} {
+    width: 50%;
+  }
+
+  li {
+    display: block;
+    margin: 0.5rem 1rem;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0;
+
+    img {
+      width: 1.5rem;
+    }
+
+    p {
+      font-size: 0.8em;
+    }
+  }
+}

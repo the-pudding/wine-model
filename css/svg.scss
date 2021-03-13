@@ -1,0 +1,12 @@
+// Hidden SVG for path storage.
+#svg-container {
+  visibility: hidden;
+  position: absolute;
+  pointer-events: none;
+}
+
+.animals {
+  fill: none;
+  stroke-width: 1;
+  stroke: grey;
+}

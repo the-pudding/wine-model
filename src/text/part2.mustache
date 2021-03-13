@@ -1,0 +1,68 @@
+<h1>A conceptual model</h1>
+
+<div class="section section-5">
+  <p>
+    Now we can assume these inputs are related to our output, meaning a certain composition of physiochemical properties are associated with a <span class="good">high quality</span> outcome.
+  </p>
+</div>
+
+<div class="section section-6">
+  <p>
+    while a different configuration of properties associates with a <span class="bad">lower quality</span> wine.
+  </p>
+</div>
+
+<div class="section section-7">
+  <p><span class="highlight larger">Try it for yourself....</span></p>
+  <div id="slider-tool">
+    <input type="range" class="lolli-slider" id="slider-alcohol" name="alcohol" min="0" max="1" step="0.01"/>
+    <label for="slider-alcohol">Alcohol</label>
+    <input type="range" class="lolli-slider" id="slider-acids" name="acids" min="0" max="1" step="0.01"/>
+    <label for="slider-acids">Acids</label>
+    <input type="range" class="lolli-slider" id="slider-sugars" name="sugars" min="0" max="1" step="0.01"/>
+    <label for="slider-sugars">Sugars</label>
+  </div>
+  <p>
+    Moving these model inputs, we might hope to find a combination that yields the highest possible quality, but the only thing that matters for the model is to establish reliable relationships within the data
+  </p>
+</div>
+
+
+<div class="section section-8">
+  <p>
+    so it can &mdash; in our case &mdash; <span class="highlight">express wine quality as a function of its properties</span> entirely.
+  </p>
+</div>
+
+<div class="section section-9">
+  <p>
+    We would have a <span class="highlight">mathematical model</span> that takes a wine's properties as input
+  </p>
+</div>
+
+<div class="section section-10">
+  <p>
+    and returns some sort of estimate as to whether this wine is leaning towards being good or not so good. 
+  </p>
+</div>
+
+<div class="section no-trigger">
+  <p>
+    The model reduces relationships between individual data columns to an equation that looks something like this:
+  </p>
+  <div class="image-wrap">
+    <img src="../../static/equation@2x.png" alt="Alcohol times Alcohol weight plus Acid times Acid weight plus Sugar times Sugar weight equals Quality">
+  </div>
+    <p>
+    This is a rather simple envelope’s backside, but in essence it’s an equation that relates some inputs to an output. In our case it relates the configuration of the wine's components to its quality.
+  </p>
+  <p>
+    We have the inputs weighted by some input-specific factor which tells the model how much impact the respective property has on the output. The greater the weights → the more impact they have. 
+  </p>
+</div>
+
+<div class="section section-11">
+  <p>
+    But how does the model get these weights? How does it learn which property drives quality to what degree?
+  </p>
+</div>
