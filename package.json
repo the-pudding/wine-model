@@ -7,7 +7,8 @@
     "build": "rollup --config",
     "serve": "live-server -q",
     "watch": "rollup --watch --config",
-    "start": "npm run serve & npm run watch"
+    "start": "npm run serve & npm run watch",
+    "docs": "./docs.sh"
   },
   "keywords": [],
   "author": "",
