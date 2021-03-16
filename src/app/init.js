@@ -427,12 +427,12 @@ function ready([
 function init() {
   window.addEventListener('load', removeSpinner);
 
-  const wineScape = image('../../static/wine-scape.png');
-  const globeData = json('../../data/world-simple.json');
-  const wineData = csv('../../data/winedata.csv', autoType);
-  const varImpData = csv('../../data/importance.csv', autoType);
-  const modelIntercept = csv('../../data/model-intercept.csv', autoType);
-  const modelWeights = csv('../../data/model-weights.csv', autoType);
+  const wineScape = image('https://pudding.cool/2021/03/wine-model/static/wine-scape.png');
+  const globeData = json('https://pudding.cool/2021/03/wine-model/data/world-simple.json');
+  const wineData = csv('https://pudding.cool/2021/03/wine-model/data/winedata.csv', autoType);
+  const varImpData = csv('https://pudding.cool/2021/03/wine-model/data/importance.csv', autoType);
+  const modelIntercept = csv('https://pudding.cool/2021/03/wine-model/data/model-intercept.csv', autoType);
+  const modelWeights = csv('https://pudding.cool/2021/03/wine-model/data/model-weights.csv', autoType);
   const date = Date.now();
   const puddingStories = json(
     `https://pudding.cool/assets/data/stories.json?v=${date}`
