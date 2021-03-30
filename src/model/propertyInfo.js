@@ -68,7 +68,7 @@ const info = [
     variable: 'residual_sugar',
     operator: '>',
     threshold: 3.8,
-    info: ['getting on the sweater', 'side for a red wine now'],
+    info: ['getting on the sweeter', 'side for a red wine now'],
     infoColour: '#777',
   },
   {
